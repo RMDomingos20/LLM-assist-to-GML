@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' 'unsafe-inline' 'unsafe-eval' data: blob: https: http:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https: http:; style-src 'self' 'unsafe-inline';">
+    
+    <title>GML Assistant</title>
+    <style>
+      * { 
+        margin: 0; 
+        padding: 0; 
+        box-sizing: border-box; 
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      @keyframes pulse {
+        0%, 100% { opacity: 0.3; transform: scale(0.8); }
+        50%       { opacity: 1;   transform: scale(1.2); }
+      }
+      
+      /* Força elementos nativos (como scrollbars e selects) para o Dark Mode */
+      body { 
+        overflow: hidden; 
+        background: #07090E; 
+        color: #E2E8F8;
+        color-scheme: dark; 
+      }
+      
+      #root { height: 100vh; }
+
+      /* =========================================================
+         BARRA DE ROLAGEM MODERNA E BONITA
+         ========================================================= */
+      ::-webkit-scrollbar { 
+        width: 14px;  /* Um pouco mais largo para dar espaço à borda invisível */
+        height: 14px; 
+      }
+      ::-webkit-scrollbar-track { 
+        background: transparent; /* Pista invisível para ficar limpo */
+      }
+      ::-webkit-scrollbar-thumb { 
+        background-color: #1A2035; /* Cor C.border do nosso tema */
+        border-radius: 10px;       /* Deixa a barra arredondada (pílula) */
+        border: 4px solid rgba(0,0,0,0); /* Borda transparente... */
+        background-clip: padding-box;    /* ...que cria um "padding" na barra */
+      }
+      ::-webkit-scrollbar-thumb:hover { 
+        background-color: #5A6A8A; /* Cor mais clara (C.textMuted) ao passar o mouse */
+      }
+      ::-webkit-scrollbar-corner {
+        background: transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- O caminho abaixo foi corrigido de /src/renderer/ para /src/ -->
+    <script type="module" src="./src/main.jsx"></script>
+  </body>
+</html>
